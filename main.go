@@ -7,6 +7,7 @@ import (
 	"github.com/apex/log"
 	lcli "github.com/apex/log/handlers/cli"
 	"github.com/goreleaser/goreleaser/goreleaserlib"
+	colorable "github.com/mattn/go-colorable"
 	"github.com/urfave/cli"
 )
 
@@ -17,7 +18,7 @@ var (
 )
 
 func init() {
-	log.SetHandler(lcli.New(os.Stdout))
+	log.SetHandler(lcli.New(colorable.NewColorableStdout()))
 }
 
 func main() {
